@@ -1,0 +1,22 @@
+{
+  "name": "lines",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lines.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/numical/lines.git"
+  },
+  "author": "Mike Evans mike.evans@numical.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/numical/lines/issues"
+  },
+  "homepage": "https://github.com/numical/lines#readme",
+  "dependencies": {
+    "svg.js": "^2.6.3"
+  }
+}
