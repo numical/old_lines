@@ -1,14 +1,17 @@
 /* global SVG */
 
+import assumptions from './assumptions.js';
+
 const xSize = 400;
 const ySize = 400;
 const xOffset = 20;
 const yOffset = 25;
 const lineWidth = 3;
 const interval = {
-  animation: 200,
-  transition: 100,
-  read: 100
+  animation: 2000,
+  transition: 1000,
+  read: 1000,
+  append: 100
 };
 const redLine = {
   width: lineWidth,
@@ -17,6 +20,7 @@ const redLine = {
 const axis = {
   width: lineWidth
 };
+const debug = true;
 
 const pause = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -26,6 +30,11 @@ const displayText = async(element, text) => {
   element.innerHTML = text;
   element.className = 'fade-in';
   await pause(interval.transition + interval.read);
+};
+
+const appendText = async(element, text) => {
+  element.innerHTML = element.innerHTML + '<br />' + text;
+  await pause(interval.append);
 };
 
 const drawLine = (svg) => {
@@ -76,9 +85,13 @@ const runIntroScript = async (elements) => {
 const runCalculationScript = async(elements) => {
   const text = displayText.bind(null, elements.text);
   await hide(elements.form);
-  console.log('MikeE: ' + JSON.stringify(elements.form));
   text("We're now going to make a lot of assumptions...");
   await hide(elements.graphic);
+  await displayText(elements.graphic, '');
+  console.log(assumptions);
+  assumptions.forEach(async(assumption) => {
+    await appendText(elements.graphic, assumption);
+  });
   return false;
 };
 
@@ -88,8 +101,12 @@ const elements = {
   svg: SVG('graphic').size(xSize, ySize),
   text: document.getElementById('text')
 };
+document.startCalculation = runCalculationScript.bind(null, elements);
 
-const startIntro = runIntroScript.bind(null, elements);
-const startCalculation = runCalculationScript.bind(null, elements); // eslint-disable-line no-unused-vars
+if (debug) {
+  Object.entries(interval).forEach(([key, value]) => {
+    interval[key] = value / 10;
+  });
+}
 
-startIntro();
+runIntroScript(elements);

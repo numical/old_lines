@@ -18,5 +18,8 @@
   "homepage": "https://github.com/numical/lines#readme",
   "dependencies": {
     "svg.js": "^2.6.3"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
   }
 }

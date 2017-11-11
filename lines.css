@@ -4,7 +4,8 @@ body {
 }
 
 #graphic {
-
+  display: flex;
+  flex-basis: 400px;
 }
 
 #textContainer {
