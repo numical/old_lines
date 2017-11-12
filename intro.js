@@ -11,7 +11,7 @@ const interval = {
   animation: 2000,
   transition: 1000,
   read: 1000,
-  append: 100
+  append: 75
 };
 const redLine = {
   width: lineWidth,
@@ -20,21 +20,33 @@ const redLine = {
 const axis = {
   width: lineWidth
 };
-const debug = true;
+const debug = false;
 
 const pause = (ms = 1000) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const listAssumptions = () => {
+  let list = assumptions;
+  let i = 0;
+  while (i < 2) {
+    list = list.concat(list);
+    i++;
+  }
+  return list;
+};
 
 const displayText = async(element, text) => {
   element.className = 'fade-out';
   await pause(interval.transition);
   element.innerHTML = text;
   element.className = 'fade-in';
-  await pause(interval.transition + interval.read);
+  await pause(interval.transition);
+  if (text !== '') await pause(interval.read);
 };
 
-const appendText = async(element, text) => {
-  element.innerHTML = element.innerHTML + '<br />' + text;
-  await pause(interval.append);
+const appendText = (parent, text) => {
+  parent.appendChild(document.createElement('br'));
+  parent.appendChild(document.createTextNode(text));
+  parent.lastElementChild.scrollIntoView();
 };
 
 const drawLine = (svg) => {
@@ -69,6 +81,13 @@ const hide = async(element) => {
   element.display = 'none';
 };
 
+const resetForReact = () => {
+  document.body.innerHTML = '';
+  const container = document.createElement('div');
+  container.id = 'react-container';
+  document.body.appendChild(container);
+};
+
 const runIntroScript = async (elements) => {
   const text = displayText.bind(null, elements.text);
   drawLine(elements.svg);
@@ -77,7 +96,7 @@ const runIntroScript = async (elements) => {
   await text("Let's make it more interesting.");
   await text("Let's make it represent your wealth.");
   drawAxes(elements.svg);
-  await pause(interval.read);
+  await pause(interval.read * 2);
   await text("It's pretty meaningless without numbers...");
   show(elements.form);
 };
@@ -86,12 +105,19 @@ const runCalculationScript = async(elements) => {
   const text = displayText.bind(null, elements.text);
   await hide(elements.form);
   text("We're now going to make a lot of assumptions...");
-  await hide(elements.graphic);
   await displayText(elements.graphic, '');
-  console.log(assumptions);
-  assumptions.forEach(async(assumption) => {
-    await appendText(elements.graphic, assumption);
+  let delay = 0;
+  listAssumptions().forEach((assumption) => {
+    const callback = appendText.bind(null, elements.graphic, assumption);
+    delay += interval.append;
+    setTimeout(callback, delay);
   });
+  await pause(delay / 3);
+  await text('...and make a plan of your financial life.');
+  await pause(interval.read);
+  hide(elements.text);
+  await hide(elements.graphic);
+  resetForReact();
   return false;
 };
 
