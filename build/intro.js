@@ -1,6 +1,7 @@
 /* global SVG */
 
 import assumptions from './assumptions.js';
+import startApp from './react-app.js';
 
 const xSize = 400;
 const ySize = 400;
@@ -118,7 +119,13 @@ const runCalculationScript = async(elements) => {
   hide(elements.text);
   await hide(elements.graphic);
   resetForReact();
+  startApp();
   return false;
+};
+
+const bypassIntro = async() => {
+  resetForReact();
+  startApp();
 };
 
 const elements = {
@@ -136,3 +143,4 @@ if (debug) {
 }
 
 runIntroScript(elements);
+// bypassIntro();

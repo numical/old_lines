@@ -4,7 +4,9 @@
   "description": "",
   "main": "lines.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c build-config.js -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "web": "http-server ./build"
   },
   "repository": {
     "type": "git",
@@ -17,9 +19,19 @@
   },
   "homepage": "https://github.com/numical/lines#readme",
   "dependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
     "svg.js": "^2.6.3"
   },
   "devDependencies": {
+    "rollup": "0.50.0",
+    "rollup-plugin-buble": "0.15.0",
+    "rollup-plugin-commonjs": "8.2.1",
+    "rollup-plugin-node-globals": "1.1.0",
+    "rollup-plugin-node-resolve": "3.0.0",
+    "rollup-plugin-replace": "2.0.0",
+    "rollup-plugin-uglify": "2.0.1",
+    "rollup-watch": "4.3.1",
     "http-server": "^0.10.0"
   }
 }
