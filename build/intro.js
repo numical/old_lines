@@ -142,5 +142,5 @@ if (debug) {
   });
 }
 
-runIntroScript(elements);
-// bypassIntro();
+// runIntroScript(elements);
+bypassIntro();

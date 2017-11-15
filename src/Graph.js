@@ -2,34 +2,42 @@ import React from 'react';
 
 class Graph extends React.Component {
   render () {
+    const margin = 5;
+    const width = window.innerWidth;
+    const height = 400;
+
     const svg = {
-      width: 400,
-      height: 400
+      width,
+      height
     };
+
     const xAxis = {
-      x1: 5,
-      x2: 395,
-      y1: 395,
-      y2: 395,
+      x1: margin,
+      x2: width - (margin * 8),
+      y1: height - margin,
+      y2: height - margin,
       'stroke-width': 2,
-      stroke: 'black'
+      stroke: 'white'
     };
+
     const yAxis = {
-      x1: 5,
-      x2: 5,
-      y1: 5,
-      y2: 395,
+      x1: margin,
+      x2: margin,
+      y1: margin,
+      y2: height - margin,
       'stroke-width': 2,
-      stroke: 'black'
+      stroke: 'white'
     };
+
     const salary = {
-      x1: 5,
-      x2: 395,
-      y1: 195,
-      y2: 195,
+      x1: margin,
+      x2: width - (margin * 8),
+      y1: height / 2,
+      y2: height / 2,
       'stroke-width': 2,
       stroke: 'red'
     };
+
     return (
       <svg {...svg}>
         <line {...xAxis} />

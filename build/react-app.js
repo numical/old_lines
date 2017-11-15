@@ -30,8 +30,7 @@ Item.prototype.run = function () {
 
 
 
-// generate timestamp or delta
-// see http://nodejs.org/api/process.html#process_process_hrtime
+// from https://github.com/kumavis/browser-process-hrtime/blob/master/index.js
 
 function createCommonjsModule(fn, module) {
 	return module = { exports: {} }, fn(module, module.exports), module.exports;
@@ -130,14 +129,6 @@ var objectAssign = shouldUseNative() ? Object.assign : function (target, source)
 	return to;
 };
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
-
 'use strict';
 
 var emptyObject = {};
@@ -185,14 +176,6 @@ emptyFunction.thatReturnsArgument = function (arg) {
 
 var emptyFunction_1 = emptyFunction;
 
-/** @license React v16.1.1
- * react.production.min.js
- *
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 'use strict';
 function q(a){
 var arguments$1 = arguments;
@@ -219,14 +202,6 @@ var d=objectAssign({},a.props),c=a.key,h=a.ref,
 k=a._owner;if(null!=b){void 0!==b.ref&&(h=b.ref,k=z.current);void 0!==b.key&&(c=""+b.key);if(a.type&&a.type.defaultProps){ var f=a.type.defaultProps; }for(g in b){ A.call(b,g)&&!C.hasOwnProperty(g)&&(d[g]=void 0===b[g]&&void 0!==f?f[g]:b[g]); }}var g=arguments.length-2;if(1===g){ d.children=e; }else if(1<g){f=Array(g);for(var l=0;l<g;l++){ f[l]=arguments$1[l+2]; }d.children=f;}return{$$typeof:B,type:a.type,key:c,ref:h,props:d,_owner:k}},createFactory:function(a){var b=D.bind(null,a);b.type=a;return b},isValidElement:E,
 version:"16.1.1",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:z,assign:objectAssign}};
 var S=Object.freeze({default:R});
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -273,14 +248,6 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 var invariant_1 = invariant;
-
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- */
 
 'use strict';
 
@@ -353,13 +320,6 @@ var warning_1 = warning;
 var ReactPropTypesSecret$1 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1 = ReactPropTypesSecret$1;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 
 'use strict';
 
@@ -2101,17 +2061,6 @@ function focusNode(node) {
 
 var focusNode_1 = focusNode;
 
-/** @license React v16.1.1
- * react-dom.production.min.js
- *
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-/*
- Modernizr 3.0.0pre (Custom Build) | MIT
-*/
 'use strict';
 function D$1(a){
 var arguments$1 = arguments;
@@ -2411,15 +2360,6 @@ function hyphenate(string) {
 
 var hyphenate_1 = hyphenate;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
 'use strict';
 
 
@@ -2477,15 +2417,6 @@ function camelize(string) {
 }
 
 var camelize_1 = camelize;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
 
 'use strict';
 
@@ -17941,34 +17872,42 @@ var Graph = (function (superclass) {
   Graph.prototype.constructor = Graph;
 
   Graph.prototype.render = function render () {
+    var margin = 5;
+    var width = window.innerWidth;
+    var height = 400;
+
     var svg = {
-      width: 400,
-      height: 400
+      width: width,
+      height: height
     };
+
     var xAxis = {
-      x1: 5,
-      x2: 395,
-      y1: 395,
-      y2: 395,
+      x1: margin,
+      x2: width - (margin * 8),
+      y1: height - margin,
+      y2: height - margin,
       'stroke-width': 2,
-      stroke: 'black'
+      stroke: 'white'
     };
+
     var yAxis = {
-      x1: 5,
-      x2: 5,
-      y1: 5,
-      y2: 395,
+      x1: margin,
+      x2: margin,
+      y1: margin,
+      y2: height - margin,
       'stroke-width': 2,
-      stroke: 'black'
+      stroke: 'white'
     };
+
     var salary = {
-      x1: 5,
-      x2: 395,
-      y1: 195,
-      y2: 195,
+      x1: margin,
+      x2: width - (margin * 8),
+      y1: height / 2,
+      y2: height / 2,
       'stroke-width': 2,
       stroke: 'red'
     };
+
     return (
       react.createElement( 'svg', svg,
         react.createElement( 'line', xAxis),
@@ -17996,7 +17935,7 @@ var ModelElementGroup = (function (superclass) {
 
   ModelElementGroup.prototype.render = function render () {
     return (
-      react.createElement( 'div', null,
+      react.createElement( 'div', { className: 'model group' },
         react.createElement( 'h2', null, this.props.title ),
         this.props.elements.map(this.renderElement)
       )
@@ -18007,6 +17946,15 @@ var ModelElementGroup = (function (superclass) {
 }(react.Component));
 
 var createUI = function () {
+  var container = {
+    className: 'container'
+  };
+  var graph = {
+    className: 'graph'
+  };
+  var model = {
+    className: 'model'
+  };
   var finances = {
     title: 'Finances',
     elements: ['salary', 'pension', 'savings', 'life assurance']
@@ -18021,11 +17969,13 @@ var createUI = function () {
   };
 
   return (
-    react.createElement( 'div', null,
-      react.createElement( Graph, null ),
-      react.createElement( ModelElementGroup, finances),
-      react.createElement( ModelElementGroup, events),
-      react.createElement( ModelElementGroup, targets)
+    react.createElement( 'div', container,
+      react.createElement( Graph, graph),
+      react.createElement( 'div', model,
+        react.createElement( ModelElementGroup, finances),
+        react.createElement( ModelElementGroup, events),
+        react.createElement( ModelElementGroup, targets)
+      )
     )
   );
 };

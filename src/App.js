@@ -5,6 +5,15 @@ import Graph from './Graph.js';
 import ModelElementGroup from './ModelElementGroup.js';
 
 const createUI = () => {
+  const container = {
+    className: 'container'
+  };
+  const graph = {
+    className: 'graph'
+  };
+  const model = {
+    className: 'model'
+  };
   const finances = {
     title: 'Finances',
     elements: ['salary', 'pension', 'savings', 'life assurance']
@@ -19,11 +28,13 @@ const createUI = () => {
   };
 
   return (
-    <div>
-      <Graph />
-      <ModelElementGroup {...finances} />
-      <ModelElementGroup {...events} />
-      <ModelElementGroup {...targets} />
+    <div {...container}>
+      <Graph {...graph} />
+      <div {...model}>
+        <ModelElementGroup {...finances} />
+        <ModelElementGroup {...events} />
+        <ModelElementGroup {...targets} />
+      </div>
     </div>
   );
 };

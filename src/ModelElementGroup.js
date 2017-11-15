@@ -7,7 +7,7 @@ class ModelElementGroup extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className='model group'>
         <h2>{this.props.title}</h2>
         {this.props.elements.map(this.renderElement)}
       </div>

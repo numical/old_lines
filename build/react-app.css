@@ -1,0 +1,30 @@
+.container {
+  background-color: black;
+}
+
+.graph {
+  display: flex;
+  flex-basis: 400px;
+  min-height: 400px;
+  max-height: 400px;
+  overflow: hidden;
+  margin: 5px;
+}
+
+.model {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.group {
+  border: 2px solid white;
+  color: white;
+  margin: 5px;
+  padding: 5px;
+  font-family: sans-serif;
+}
+
+h2 {
+  font-size: large;
+}
