@@ -16,7 +16,7 @@ class Graph extends React.Component {
       x2: width - (margin * 8),
       y1: height - margin,
       y2: height - margin,
-      'stroke-width': 2,
+      strokeWidth: 2,
       stroke: 'white'
     };
 
@@ -25,7 +25,7 @@ class Graph extends React.Component {
       x2: margin,
       y1: margin,
       y2: height - margin,
-      'stroke-width': 2,
+      strokeWidth: 2,
       stroke: 'white'
     };
 
@@ -34,7 +34,7 @@ class Graph extends React.Component {
       x2: width - (margin * 8),
       y1: height / 2,
       y2: height / 2,
-      'stroke-width': 2,
+      strokeWidth: 2,
       stroke: 'red'
     };
 

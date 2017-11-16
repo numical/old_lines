@@ -17886,7 +17886,7 @@ var Graph = (function (superclass) {
       x2: width - (margin * 8),
       y1: height - margin,
       y2: height - margin,
-      'stroke-width': 2,
+      strokeWidth: 2,
       stroke: 'white'
     };
 
@@ -17895,7 +17895,7 @@ var Graph = (function (superclass) {
       x2: margin,
       y1: margin,
       y2: height - margin,
-      'stroke-width': 2,
+      strokeWidth: 2,
       stroke: 'white'
     };
 
@@ -17904,7 +17904,7 @@ var Graph = (function (superclass) {
       x2: width - (margin * 8),
       y1: height / 2,
       y2: height / 2,
-      'stroke-width': 2,
+      strokeWidth: 2,
       stroke: 'red'
     };
 
@@ -17930,14 +17930,47 @@ var ModelElementGroup = (function (superclass) {
   ModelElementGroup.prototype.constructor = ModelElementGroup;
 
   ModelElementGroup.prototype.renderElement = function renderElement (element, index) {
-    return react.createElement( 'div', { key: index }, element);
+    var props = {
+      key: index,
+      className: 'element'
+    };
+    var configureImageProps = {
+      src: '/images/cog.svg',
+      alt: 'Configure',
+      className: 'icon'
+    };
+    var importImageProps = {
+      src: '/images/account-login.svg',
+      alt: 'Live Import',
+      className: 'icon'
+    };
+    var agentImageProps = {
+      src: '/images/person.svg',
+      alt: 'Agent',
+      className: 'icon'
+    };
+    return (
+      react.createElement( 'div', props,
+        element,
+        react.createElement( 'img', agentImageProps),
+        react.createElement( 'img', configureImageProps),
+        react.createElement( 'img', importImageProps)
+      ));
+  };
+
+  ModelElementGroup.prototype.renderAdd = function renderAdd () {
+    var props = {
+      className: 'element'
+    };
+    return react.createElement( 'div', props, "+");
   };
 
   ModelElementGroup.prototype.render = function render () {
     return (
-      react.createElement( 'div', { className: 'model group' },
+      react.createElement( 'div', { className: 'group' },
         react.createElement( 'h2', null, this.props.title ),
-        this.props.elements.map(this.renderElement)
+        this.props.elements.map(this.renderElement),
+        this.renderAdd()
       )
     );
   };
