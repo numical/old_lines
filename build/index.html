@@ -3,38 +3,29 @@
   <head>
     <meta charset="utf-8">
     <title>MoneyLines</title>
-    <link rel=stylesheet type='text/css' href='intro.css'></link>
-    <link rel=stylesheet type='text/css' href='react-app.css'></link>
+    <style>
+@font-face{font-family:'Tesco';src:url("/fonts/tescorg.eot");src:local("☺︎"),url("/fonts/tescorg.eot?#iefix") format("embedded-opentype"),url("/fonts/tescorg.woff") format("woff"),url("/fonts/tescorg.ttf") format("truetype"),url("/fonts/tescorg.svg#tescoregular") format("svg");font-weight:300;font-style:normal}
+@font-face{font-family:'Tesco';src:url("/fonts/tescobd.eot");src:local("☺︎"),url("/fonts/tescobd.eot?#iefix") format("embedded-opentype"),url("/fonts/tescobd.woff") format("woff"),url("/fonts/tescobd.ttf") format("truetype"),url("/fonts/tescobd.svg#tescobold") format("svg");font-weight:700}
+      body {
+        font-family: Tesco, Arial, sans-serif;
+        font-size: xx-large;
+        color: rgb(26, 48, 95);
+        text-align: center;
+      }
+      a {
+        font-size: medium;
+        text-decoration: none;
+      }
+      .red {
+        color: red;
+      }
+    </style>
   </head>
   <body>
-    <div id='intro'>
-      <div id='graphic'></div>
-      <div id='textContainer'>
-        <div id='text' class='hidden'></div>
-        <form id='form' class='hidden'>
-          <div>
-            <label for="age">Your age:</label>
-            <select id="age" name="age"></select>
-          </div>
-          <div>
-            <label for="income">Your income: £</label>
-            <select id="income" name="income"></select>
-            <label for="income_interval">per</label>
-            <select id="income_interval" name="income_interval">
-              <option value="YEAR" selected>year</option>
-              <option value="MONTH">month</option>
-              <option value="WEEK">week</option>
-              <option value="DAY">day</option>
-            </select>
-          <div>
-            <input type="button" value="OK" onclick='startCalculation()'></input>
-        </form>
-      </div>
-    </div>
-    <script type="text/javascript" src="options.js" charset="utf-8"></script>
-    <script type="text/javascript" src="svg.js" charset="utf-8"></script>
-    <script type="module" src="intro.js" charset="utf-8"></script>
-    <script type="module" src="assumptions.js"  charset="utf-8"></script>
-    <script type="module" src="react-app.js"  charset="utf-8"></script>
+    <h1>Smart Mortgages<span class='red'>.</span></h1>
+    <h2>Today's Really Useless Mortgage Process</h2>
+    <h2>vs.</h2>
+    <h2>Open Banking Assisted Mortgage Approvals</h2>
+    <a href='./app.html'>[demo]</a>
   </body>
 </html>
