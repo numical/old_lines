@@ -10,6 +10,7 @@ if (typeof global$1.clearTimeout === 'function') {
 }
 
 
+// v8 likes predictible objects
 
 
 
@@ -57,7 +58,6 @@ object-assign
 @license MIT
 */
 
-/* eslint-disable no-unused-vars */
 var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
@@ -151,15 +151,6 @@ var emptyObject = {};
 
 var emptyObject_1 = emptyObject;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
 function makeEmptyFunction(arg) {
   return function () {
     return arg;
@@ -212,17 +203,6 @@ version:"16.1.1",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurren
 var S=Object.freeze({default:R});
 var T=S&&R||S;var react_production_min=T["default"]?T["default"]:T;
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
-
 var validateFormat = function validateFormat(format) {};
 
 {
@@ -255,13 +235,6 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 var invariant_1 = invariant;
-
-/**
- * Similar to invariant but only logs a warning if the condition is not met.
- * This can be used to log issues in development environments in critical
- * paths. Removing the logging code for production environments will keep the
- * same logic and follow the same code paths.
- */
 
 var warning = emptyFunction_1;
 
@@ -1765,21 +1738,6 @@ var ExecutionEnvironment = {
 
 var ExecutionEnvironment_1 = ExecutionEnvironment;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-
-
-/**
- * Upstream version of event listener. Does not take into account specific
- * nature of platform.
- */
 var EventListener = {
   /**
    * Listen to DOM events during the bubble phase.
@@ -1838,27 +1796,6 @@ var EventListener = {
 
 var EventListener_1 = EventListener;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-/* eslint-disable fb-www/typeof-undefined */
-
-/**
- * Same as document.activeElement but wraps in a try-catch block. In IE it is
- * not safe to call document.activeElement if there is nothing focused.
- *
- * The activeElement will be null only if the document or document body is not
- * yet defined.
- *
- * @param {?DOMDocument} doc Defaults to current document.
- * @return {?DOMElement}
- */
 function getActiveElement(doc) /*?DOMElement*/{
   doc = doc || (typeof document !== 'undefined' ? document : undefined);
   if (typeof doc === 'undefined') {
@@ -1937,19 +1874,6 @@ function shallowEqual(objA, objB) {
 
 var shallowEqual_1 = shallowEqual;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM node.
- */
 function isNode(object) {
   var doc = object ? object.ownerDocument || object : document;
   var defaultView = doc.defaultView || window;
@@ -1958,43 +1882,12 @@ function isNode(object) {
 
 var isNode_1 = isNode;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
-
-
-/**
- * @param {*} object The object to check.
- * @return {boolean} Whether or not the object is a DOM text node.
- */
 function isTextNode(object) {
   return isNode_1(object) && object.nodeType == 3;
 }
 
 var isTextNode_1 = isTextNode;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * 
- */
-
-
-
-/*eslint-disable no-bitwise */
-
-/**
- * Checks if a given DOM node contains or is another DOM node.
- */
 function containsNode(outerNode, innerNode) {
   if (!outerNode || !innerNode) {
     return false;
@@ -2021,10 +1914,6 @@ var containsNode_1 = containsNode;
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  *
- */
-
-/**
- * @param {DOMElement} node input/textarea to focus
  */
 
 function focusNode(node) {
@@ -2301,15 +2190,6 @@ var Og={createPortal:Mg,findDOMNode:function(a){if(null==a){ return null; }if(1=
 D$1("40");return a._reactRootContainer?(Z.unbatchedUpdates(function(){Lg(null,null,a,!1,function(){a._reactRootContainer=null;});}), !0):!1},unstable_createPortal:Mg,unstable_batchedUpdates:tc,unstable_deferredUpdates:Z.deferredUpdates,flushSync:Z.flushSync,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:nb,EventPluginRegistry:Ua,EventPropagators:Cb,ReactControlledComponent:qc,ReactDOMComponentTree:tb,ReactDOMEventListener:td}};
 Z.injectIntoDevTools({findFiberByHostInstance:qb,bundleType:0,version:"16.1.1",rendererPackageName:"react-dom"});var Pg=Object.freeze({default:Og}); var Qg=Pg&&Og||Pg;var reactDom_production_min=Qg["default"]?Qg["default"]:Qg;
 
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
-
 var _uppercasePattern = /([A-Z])/g;
 
 /**
@@ -2353,15 +2233,6 @@ function hyphenateStyleName(string) {
 }
 
 var hyphenateStyleName_1 = hyphenateStyleName;
-
-/**
- * Copyright (c) 2013-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- *
- * @typechecks
- */
 
 var _hyphenPattern = /-(.)/g;
 
@@ -17815,162 +17686,192 @@ var reactDom = createCommonjsModule(function (module) {
 }
 });
 
-var Graph = (function (superclass) {
-  function Graph () {
-    superclass.apply(this, arguments);
+var types = [
+  'application/json',
+  'application/vnd.tesco.mfl.score',
+  'image/svg+xml'
+];
+
+var ContentType = (function (superclass) {
+  function ContentType(props) {
+    superclass.call(this, props);
+    console.log(props);
+    this.state = {
+      selected: types[0],
+      GET: props.GET
+    };
+    this.fireGET = this.fireGET.bind(this);
   }
 
-  if ( superclass ) Graph.__proto__ = superclass;
-  Graph.prototype = Object.create( superclass && superclass.prototype );
-  Graph.prototype.constructor = Graph;
+  if ( superclass ) ContentType.__proto__ = superclass;
+  ContentType.prototype = Object.create( superclass && superclass.prototype );
+  ContentType.prototype.constructor = ContentType;
 
-  Graph.prototype.render = function render () {
-    var margin = 5;
-    var width = window.innerWidth;
-    var height = 400;
+  ContentType.prototype.fireGET = function fireGET () {
+    this.state.GET(this.state.selected);
+  };
 
-    var svg = {
-      width: width,
-      height: height
-    };
+  ContentType.prototype.render = function render () {
+    var this$1 = this;
 
-    var xAxis = {
-      x1: margin,
-      x2: width - (margin * 8),
-      y1: height - margin,
-      y2: height - margin,
-      strokeWidth: 2,
-      stroke: 'white'
-    };
+    var options = types.map(function (type, index) {
+      return (react.createElement( 'option', { key: index, value: type }, type));
+    });
 
-    var yAxis = {
-      x1: margin,
-      x2: margin,
-      y1: margin,
-      y2: height - margin,
-      strokeWidth: 2,
-      stroke: 'white'
-    };
-
-    var salary = {
-      x1: margin,
-      x2: width - (margin * 8),
-      y1: height / 2,
-      y2: height / 2,
-      strokeWidth: 2,
-      stroke: 'red'
+    var typeSelected = function (event) {
+      this$1.setState({selected: event.target.value, GET: this$1.state.GET});
     };
 
     return (
-      react.createElement( 'svg', svg,
-        react.createElement( 'line', xAxis),
-        react.createElement( 'line', yAxis),
-        react.createElement( 'line', salary)
+      react.createElement( 'div', { id: 'contentType' }, "Content Type: ", react.createElement( 'select', { name: "contentType", onChange: typeSelected },
+          options
+        ),
+        react.createElement( 'button', { onClick: this.fireGET }, "GET")
       )
     );
   };
 
-  return Graph;
+  return ContentType;
 }(react.Component));
 
-var ModelElementGroup = (function (superclass) {
-  function ModelElementGroup () {
-    superclass.apply(this, arguments);
+var hosts = [
+  'myfinanciallife.org',
+  'tescobank.com/smartbanking',
+  'experian.com/saveourbusiness',
+  'ambientfinance.org'
+];
+
+var colours = [
+  'darkblue',
+  'blue',
+  'darkgreen',
+  'darkred'
+];
+
+var Host = (function (superclass) {
+  function Host(props) {
+    superclass.call(this, props);
+    this.state = {
+      hostIndex: 0
+    };
+    this.onClick = this.onClick.bind(this);
   }
 
-  if ( superclass ) ModelElementGroup.__proto__ = superclass;
-  ModelElementGroup.prototype = Object.create( superclass && superclass.prototype );
-  ModelElementGroup.prototype.constructor = ModelElementGroup;
+  if ( superclass ) Host.__proto__ = superclass;
+  Host.prototype = Object.create( superclass && superclass.prototype );
+  Host.prototype.constructor = Host;
 
-  ModelElementGroup.prototype.renderElement = function renderElement (element, index) {
-    var props = {
-      key: index,
-      className: 'element'
-    };
-    var configureImageProps = {
-      src: '/images/cog.svg',
-      alt: 'Configure',
-      className: 'icon'
-    };
-    var importImageProps = {
-      src: '/images/account-login.svg',
-      alt: 'Live Import',
-      className: 'icon'
-    };
-    var agentImageProps = {
-      src: '/images/person.svg',
-      alt: 'Agent',
-      className: 'icon'
-    };
-    return (
-      react.createElement( 'div', props,
-        element,
-        react.createElement( 'img', agentImageProps),
-        react.createElement( 'img', configureImageProps),
-        react.createElement( 'img', importImageProps)
-      ));
+  Host.prototype.onClick = function onClick () {
+    var index = this.state.hostIndex;
+    index++;
+    if (index === hosts.length) {
+      index = 0;
+    }
+    this.setState({hostIndex:index});
   };
 
-  ModelElementGroup.prototype.renderAdd = function renderAdd () {
-    var props = {
-      className: 'element'
-    };
-    return react.createElement( 'div', props, "+");
-  };
-
-  ModelElementGroup.prototype.render = function render () {
+  Host.prototype.render = function render () {
     return (
-      react.createElement( 'div', { className: 'group' },
-        react.createElement( 'h2', null, this.props.title ),
-        this.props.elements.map(this.renderElement),
-        this.renderAdd()
+      react.createElement( 'span', { style: {color: colours[this.state.hostIndex]}, onClick: this.onClick },
+        hosts[this.state.hostIndex]
       )
     );
   };
 
-  return ModelElementGroup;
+  return Host;
 }(react.Component));
 
-var createUI = function () {
-  var container = {
-    className: 'container'
-  };
-  var graph = {
-    className: 'graph'
-  };
-  var model = {
-    className: 'model'
-  };
-  var finances = {
-    title: 'Finances',
-    elements: ['salary', 'pension', 'savings', 'life assurance']
-  };
-  var events = {
-    title: 'Life Events',
-    elements: ['new job', 'buy house', 'maternity', 'retirement']
-  };
-  var targets = {
-    title: 'Targets',
-    elements: ['sufficient house deposit', 'minimum pension level']
+var protocol = function () { return 'https://'; };
+
+var resource = function () { return '/view/'; };
+
+var id$1 = function () { return 'd14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f'; };
+
+var URL = function (props) {
+    return (
+      react.createElement( 'div', { id: 'url' },
+        protocol(),
+        react.createElement( Host, null ),
+        resource(),
+        id$1()
+      )
+    );
   };
 
-  return (
-    react.createElement( 'div', container,
-      react.createElement( Graph, graph),
-      react.createElement( 'div', model,
-        react.createElement( ModelElementGroup, finances),
-        react.createElement( ModelElementGroup, events),
-        react.createElement( ModelElementGroup, targets)
-      )
-    )
-  );
+var example = {
+  products: {
+
+  },
+
+  views: {
+
+  },
+
+  keys: {
+
+  },
+
+  requestedUpdates: {
+
+  }
 };
+
+var jsonDisplay = (react.createElement( 'div', { id: 'code' }, JSON.stringify(example, null, 2)));
+
+var scoreDisplay = (react.createElement( 'div', { id: 'score' }, "752"));
+
+var svgDisplay = (react.createElement( 'div', { id: 'pulsing' }));
+
+var Form = (function (superclass) {
+  function Form(props) {
+    superclass.call(this, props);
+    this.state = {};
+    this.displayResource = this.displayResource.bind(this);
+    this.selectResource = this.selectResource.bind(this);
+  }
+
+  if ( superclass ) Form.__proto__ = superclass;
+  Form.prototype = Object.create( superclass && superclass.prototype );
+  Form.prototype.constructor = Form;
+
+  Form.prototype.selectResource = function selectResource () {
+    switch(this.state.type) {
+      case 'application/json':
+        return jsonDisplay;
+      case 'application/vnd.tesco.mfl.score':
+        return scoreDisplay;
+      case 'image/svg+xml':
+        return svgDisplay;
+      default:
+        return null;
+    }
+  };
+
+  Form.prototype.displayResource = function displayResource (type) {
+    this.setState({type: type});
+  };
+
+  Form.prototype.render = function render () {
+    return (
+      react.createElement( 'div', { id: 'form' },
+        react.createElement( 'div', { id: 'title' }, "ReST Demo"),
+        react.createElement( URL, null ),
+        react.createElement( ContentType, { GET: this.displayResource }),
+        react.createElement( 'div', { id: 'resource' },
+          this.selectResource()
+        )
+      )
+    );
+  };
+
+  return Form;
+}(react.Component));
 
 var getContainerElement = function () { return document.getElementById('react-container'); };
 
 var start = function () {
-  reactDom.render(createUI(), getContainerElement());
+  reactDom.render(react.createElement( Form, null ), getContainerElement());
 };
 
-export default start;
-//# sourceMappingURL=react-app.js.map
+start();
+//# sourceMappingURL=rest-demo.js.map
