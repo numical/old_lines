@@ -43,6 +43,8 @@ button {
   background-color: white;
   border: black solid 2px;
   border-radius: 5px;
+  overflow: scroll;
+  display: flex;
 }
 
 #code {
@@ -57,5 +59,20 @@ button {
 }
 
 #pulsing {
+  background-color: red;
+  width: 100%;
+  border-radius: 5px;
+  animation: colourPulse 10s infinite  ;
+}
 
+@keyframes colourPulse {
+  5% {background-color: #fdd6b5;}
+  18% {background-color: #fdf3b8;}
+  31% {background-color: #a7e4ae;}
+  44% {background-color: #bfffe6;}
+  57% {background-color: #c1d1fd;}
+  70% {background-color: #bfffe6;}
+  83% {background-color: #a7e4ae;}
+  96% {background-color: #fdf3b8;}
+  100% {background-color: #fdd6b5;}
 }
