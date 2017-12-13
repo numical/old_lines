@@ -6,7 +6,7 @@ import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
 
 export default {
-  input: 'src/App.js',
+  input: 'src/app/App.js',
   output: {
     file: 'build/react-app.js',
     format: 'es'
