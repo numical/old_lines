@@ -3,9 +3,9 @@ import React from 'react';
 const keys = [
   'd14a028c2a3a2bc9476102bb288234c415a2b01f828ea62ac5b3e42f',
   '{bank acounts since 2015}',
-  '{pension & savings records, mortgage records}',
-  '{non-numerical rent and mortgage records}',
-  '{#betterfuture tasks + gig references}'
+  '{pension & savings records, mortgage records (non numerical)}',
+  '{#betterfuture tasks + gig references}',
+  '{references from p2p transactions}'
 ];
 
 const colours = [

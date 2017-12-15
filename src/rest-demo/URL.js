@@ -4,7 +4,7 @@ import Key from './Key.js';
 
 const protocol = () => 'https://';
 
-const resource = () => '/view/';
+const resource = () => '/ecv/view/';
 
 export default (props) => {
   return (
